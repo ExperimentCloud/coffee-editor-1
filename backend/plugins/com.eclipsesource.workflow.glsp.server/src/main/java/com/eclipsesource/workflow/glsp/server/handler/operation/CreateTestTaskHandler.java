@@ -8,12 +8,21 @@
  * 
  * SPDX-License-Identifier: EPL-2.0 OR MIT
  ******************************************************************************/
-package com.eclipsesource.workflow;
+package com.eclipsesource.workflow.glsp.server.handler.operation;
 
-public interface IWorkflowTask {
-	String getId();
-	String getName();
-	int getDuration();
-	boolean isManual();
-	boolean isTest();
+import org.eclipse.emfcloud.modelserver.coffee.model.coffee.CoffeePackage;
+
+import com.eclipsesource.workflow.glsp.server.util.ModelTypes;
+
+public class CreateTestTaskHandler extends AbstractCreateTaskHandler {
+
+	public CreateTestTaskHandler() {
+		super(ModelTypes.TEST_TASK, CoffeePackage.Literals.TEST_TASK);
+	}
+
+	@Override
+	public String getLabel() {
+		return "Test Task";
+	}
+
 }

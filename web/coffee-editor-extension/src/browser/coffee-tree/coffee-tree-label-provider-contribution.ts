@@ -31,6 +31,7 @@ const ICON_CLASSES: Map<string, string> = new Map([
     [CoffeeModel.Type.Join, 'fa-code-branch fa-rotate-270 ' + DEFAULT_COLOR],
     [CoffeeModel.Type.Machine, 'fa-cogs ' + DEFAULT_COLOR],
     [CoffeeModel.Type.ManualTask, 'fa-wrench ' + DEFAULT_COLOR],
+    [CoffeeModel.Type.TestTask, 'fa-wrench ' + DEFAULT_COLOR],
     [CoffeeModel.Type.Merge, 'fa-chevron-down ' + DEFAULT_COLOR],
     [CoffeeModel.Type.Node, 'fa-circle ' + DEFAULT_COLOR],
     [CoffeeModel.Type.Processor, 'fa-microchip ' + DEFAULT_COLOR],
@@ -76,6 +77,7 @@ export class CoffeeTreeLabelProvider implements LabelProviderContribution {
                 case CoffeeModel.Type.Task:
                 case CoffeeModel.Type.AutomaticTask:
                 case CoffeeModel.Type.ManualTask:
+                case CoffeeModel.Type.TestTask:
                 case CoffeeModel.Type.Machine:
                     return data.name || this.getTypeName(data.eClass);
                 default:

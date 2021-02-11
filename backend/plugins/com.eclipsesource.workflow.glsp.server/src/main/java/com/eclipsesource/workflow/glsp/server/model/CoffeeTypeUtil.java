@@ -15,6 +15,7 @@ import org.eclipse.emfcloud.modelserver.coffee.model.coffee.Decision;
 import org.eclipse.emfcloud.modelserver.coffee.model.coffee.Fork;
 import org.eclipse.emfcloud.modelserver.coffee.model.coffee.Join;
 import org.eclipse.emfcloud.modelserver.coffee.model.coffee.ManualTask;
+import org.eclipse.emfcloud.modelserver.coffee.model.coffee.TestTask;
 import org.eclipse.emfcloud.modelserver.coffee.model.coffee.Merge;
 import org.eclipse.emfcloud.modelserver.coffee.model.coffee.Node;
 
@@ -29,6 +30,9 @@ public final class CoffeeTypeUtil {
 		}
 		if (node instanceof ManualTask) {
 			return ModelTypes.MANUAL_TASK;
+		}
+		if (node instanceof TestTask) {
+			return ModelTypes.TEST_TASK;
 		}
 		if (node instanceof Decision) {
 			return ModelTypes.DECISION_NODE;
@@ -51,6 +55,9 @@ public final class CoffeeTypeUtil {
 		}
 		if (node instanceof ManualTask) {
 			return "manual";
+		}
+		if (node instanceof TestTask) {
+			return "test";
 		}
 		if (node instanceof Decision) {
 			return "decisionNode";

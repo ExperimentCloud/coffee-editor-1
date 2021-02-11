@@ -51,6 +51,9 @@ public class WorkflowCommandPaletteActionProvider implements CommandPaletteActio
 				new LabeledAction("Create Manual Task",
 						Lists.newArrayList(
 								new CreateNodeOperation(ModelTypes.MANUAL_TASK, lastMousePosition)), "fa-plus-square"),
+				new LabeledAction("Create Test Task",
+						Lists.newArrayList(
+								new CreateNodeOperation(ModelTypes.TEST_TASK, lastMousePosition)), "fa-plus-square"),
 				new LabeledAction("Create Merge Node",
 						Lists.newArrayList(
 								new CreateNodeOperation(ModelTypes.MERGE_NODE, lastMousePosition)), "fa-plus-square"),

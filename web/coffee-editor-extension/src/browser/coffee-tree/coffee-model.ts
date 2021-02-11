@@ -25,6 +25,7 @@ export namespace CoffeeModel {
         export const Join = 'http://www.eclipsesource.com/modelserver/example/coffeemodel#//Join';
         export const Machine = 'http://www.eclipsesource.com/modelserver/example/coffeemodel#//Machine';
         export const ManualTask = 'http://www.eclipsesource.com/modelserver/example/coffeemodel#//ManualTask';
+        export const TestTask = 'http://www.eclipsesource.com/modelserver/example/coffeemodel#//TestTask';
         export const Merge = 'http://www.eclipsesource.com/modelserver/example/coffeemodel#//Merge';
         export const Node = 'http://www.eclipsesource.com/modelserver/example/coffeemodel#//Node';
         export const Processor = 'http://www.eclipsesource.com/modelserver/example/coffeemodel#//Processor';
@@ -53,6 +54,7 @@ export namespace CoffeeModel {
         Type.Fork,
         Type.Join,
         Type.ManualTask,
+        Type.TestTask,
         Type.Merge
     ];
 

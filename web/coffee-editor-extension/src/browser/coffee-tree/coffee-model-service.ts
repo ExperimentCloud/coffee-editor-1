@@ -24,9 +24,10 @@ import {
     machineView,
     manualTaskView,
     mergeView,
+    testTaskView,
     waterTankView,
     weightedFlowView,
-    workflowView
+    workflowView,
 } from './coffee-schemas';
 
 @injectable()
@@ -98,6 +99,8 @@ export class CoffeeModelService implements TreeEditor.ModelService {
                 return automaticTaskView;
             case CoffeeModel.Type.ManualTask:
                 return manualTaskView;
+            case CoffeeModel.Type.TestTask:
+                return testTaskView;
             case CoffeeModel.Type.DipTray:
                 return dipTrayView;
             case CoffeeModel.Type.WaterTank:

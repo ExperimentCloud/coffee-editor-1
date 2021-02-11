@@ -30,5 +30,9 @@ public class AutomaticWorkflowTask extends AbstractWorkflowTask implements IAuto
 	public boolean isManual() {
 		return false;
 	}
+	@Override
+	public boolean isTest() {
+		return false;
+	}
 
 }

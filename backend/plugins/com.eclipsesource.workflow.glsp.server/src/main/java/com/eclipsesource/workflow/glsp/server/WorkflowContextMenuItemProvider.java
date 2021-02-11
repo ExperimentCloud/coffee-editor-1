@@ -12,6 +12,7 @@ package com.eclipsesource.workflow.glsp.server;
 
 import static com.eclipsesource.workflow.glsp.server.util.ModelTypes.AUTOMATED_TASK;
 import static com.eclipsesource.workflow.glsp.server.util.ModelTypes.MANUAL_TASK;
+import static com.eclipsesource.workflow.glsp.server.util.ModelTypes.TEST_TASK;
 
 import java.util.Arrays;
 import java.util.List;
@@ -34,7 +35,9 @@ public class WorkflowContextMenuItemProvider implements ContextMenuItemProvider 
 				Arrays.asList(new CreateNodeOperation(AUTOMATED_TASK, position)), true);
 		MenuItem newManTask = new MenuItem("newManualTask", "Manual Task",
 				Arrays.asList(new CreateNodeOperation(MANUAL_TASK, position)), true);
-		MenuItem newChildMenu = new MenuItem("new", "New", Arrays.asList(newAutTask, newManTask), "add", "0_new");
+				MenuItem newTestTask = new MenuItem("newTestTask", "Test Task",
+				Arrays.asList(new CreateNodeOperation(TEST_TASK, position)), true);
+		MenuItem newChildMenu = new MenuItem("new", "New", Arrays.asList(newAutTask, newManTask,newTestTask), "add", "0_new");
 		return Lists.newArrayList(newChildMenu);
 	}
 }

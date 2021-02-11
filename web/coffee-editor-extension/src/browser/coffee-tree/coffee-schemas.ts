@@ -214,6 +214,32 @@ export const manualTaskView = {
     ]
 };
 
+export const testTaskView = {
+    'type': 'VerticalLayout',
+    'elements': [
+        {
+            'type': 'Label',
+            'text': 'Test Task'
+        },
+        {
+            'type': 'Control',
+            'label': 'Name',
+            'scope': '#/properties/name',
+            'options': { focus: true }
+        },
+        {
+            'type': 'Control',
+            'label': 'Duration',
+            'scope': '#/properties/duration'
+        },
+        {
+            'type': 'Control',
+            'label': 'Actor',
+            'scope': '#/properties/actor'
+        }
+    ]
+};
+
 export const automaticTaskView = {
     'type': 'VerticalLayout',
     'elements': [
@@ -464,6 +490,7 @@ export const coffeeSchema = {
                         'anyOf': [
                             { '$ref': '#/definitions/automatictask' },
                             { '$ref': '#/definitions/manualtask' },
+                            { '$ref': '#/definitions/testtask' },
                             { '$ref': '#/definitions/fork' },
                             { '$ref': '#/definitions/join' },
                             { '$ref': '#/definitions/decision' },
@@ -536,6 +563,26 @@ export const coffeeSchema = {
             'properties': {
                 'eClass': {
                     'const': 'http://www.eclipsesource.com/modelserver/example/coffeemodel#//ManualTask'
+                },
+                'name': {
+                    'type': 'string'
+                },
+                'duration': {
+                    'type': 'integer'
+                },
+                'actor': {
+                    'type': 'string'
+                }
+            },
+            'additionalProperties': false
+        },
+        'testtask': {
+            '$id': '#testtask',
+            'title': 'Test Task',
+            'type': 'object',
+            'properties': {
+                'eClass': {
+                    'const': 'http://www.eclipsesource.com/modelserver/example/coffeemodel#//TestTask'
                 },
                 'name': {
                     'type': 'string'

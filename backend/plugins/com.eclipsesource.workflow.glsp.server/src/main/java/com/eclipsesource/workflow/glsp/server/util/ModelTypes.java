@@ -22,6 +22,7 @@ public final class ModelTypes {
    public static final String DECISION_NODE = "activityNode:decision";
    public static final String MERGE_NODE = "activityNode:merge";
    public static final String MANUAL_TASK = "task:manual";
+   public static final String TESTTASK = "task:test";
    public static final String AUTOMATED_TASK = "task:automated";
 
    public static String toNodeType(final String type) {
@@ -32,6 +33,8 @@ public final class ModelTypes {
             return "mergeNode";
          case MANUAL_TASK:
             return "manual";
+            case TEST_TASK:
+            return "test";
          case AUTOMATED_TASK:
             return "automated";
          default:

@@ -26,6 +26,7 @@ public class JavaWorkflowGenerator {
 	// workflow library
 	private WorkflowTaskGenerator workflowTaskGen = new WorkflowTaskGenerator(SRC_GEN_FOLDER);
 	private AutomaticWorkflowTaskGenerator automaticWorkflowTaskGen = new AutomaticWorkflowTaskGenerator(SRC_GEN_FOLDER);
+	private TestWorkflowTaskGenerator testWorkflowTaskGen = new TestWorkflowTaskGenerator(SRC_GEN_FOLDER);
 	private ManualWorkflowTaskGenerator manualWorkflowTaskGen = new ManualWorkflowTaskGenerator(SRC_GEN_FOLDER);
 	
 	// testing library
@@ -79,6 +80,10 @@ public class JavaWorkflowGenerator {
 		result.add(new GeneratedFile(
 				manualWorkflowTaskGen.toFileName(packageName), 
 				manualWorkflowTaskGen.toFileContent(packageName),
+				false));
+		result.add(new GeneratedFile(
+				testWorkflowTaskGen.toFileName(packageName), 
+				testWorkflowTaskGen.toFileContent(packageName),
 				false));
 	}
 }

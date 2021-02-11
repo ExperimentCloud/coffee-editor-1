@@ -8,12 +8,27 @@
  * 
  * SPDX-License-Identifier: EPL-2.0 OR MIT
  ******************************************************************************/
-package com.eclipsesource.workflow;
+package com.eclipsesource.workflow.impl;
 
-public interface IWorkflowTask {
-	String getId();
-	String getName();
-	int getDuration();
-	boolean isManual();
-	boolean isTest();
+import com.eclipsesource.workflow.ITestWorkflowTask;
+
+public class TestWorkflowTask extends AbstractWorkflowTask implements ITestWorkflowTask {
+
+	private String actor;
+
+	public TestWorkflowTask(String id, String name, int duration, String actor) {
+		super(id, name, duration);
+		this.actor = actor;
+	}
+
+	@Override
+	public String getActor() {
+		return actor;
+	}
+
+	@Override
+	public boolean isTest() {
+		return true;
+	}
+
 }

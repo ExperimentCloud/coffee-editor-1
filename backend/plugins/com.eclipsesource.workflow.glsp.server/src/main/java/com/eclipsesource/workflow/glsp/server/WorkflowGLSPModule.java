@@ -40,6 +40,7 @@ import com.eclipsesource.workflow.glsp.server.handler.operation.CreateAutomatedT
 import com.eclipsesource.workflow.glsp.server.handler.operation.CreateDecisionNodeHandler;
 import com.eclipsesource.workflow.glsp.server.handler.operation.CreateFlowHandler;
 import com.eclipsesource.workflow.glsp.server.handler.operation.CreateManualTaskHandler;
+import com.eclipsesource.workflow.glsp.server.handler.operation.CreateTestTaskHandler;
 import com.eclipsesource.workflow.glsp.server.handler.operation.CreateMergeNodeHandler;
 import com.eclipsesource.workflow.glsp.server.handler.operation.CreateWeightedFlowHandler;
 import com.eclipsesource.workflow.glsp.server.handler.operation.DeleteOperationHandler;
@@ -83,6 +84,7 @@ public class WorkflowGLSPModule extends DefaultGLSPModule {
 	protected void configureOperationHandlers(MultiBinding<OperationHandler> bindings) {
 		bindings.add(CreateAutomatedTaskHandler.class);
 		bindings.add(CreateManualTaskHandler.class);
+		bindings.add(CreateTestTaskHandler.class);
 		bindings.add(CreateDecisionNodeHandler.class);
 		bindings.add(CreateMergeNodeHandler.class);
 		bindings.add(CreateFlowHandler.class);

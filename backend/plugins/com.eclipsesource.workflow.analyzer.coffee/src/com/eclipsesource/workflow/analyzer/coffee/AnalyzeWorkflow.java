@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.xtext.resource.XtextResourceSet;
 
+import com.eclipsesource.modelserver.coffee.model.coffee.TestTask;
 import com.eclipsesource.modelserver.coffee.model.coffee.AutomaticTask;
 import com.eclipsesource.modelserver.coffee.model.coffee.CoffeePackage;
 import com.eclipsesource.modelserver.coffee.model.coffee.Flow;
@@ -100,7 +101,10 @@ public class AnalyzeWorkflow {
 		Task task = new Task(node.getName(), new Performer("unkown"), node.getDuration());
 		if (node instanceof AutomaticTask) {
 			analysis.addTask(task, "automatic");
-		} else if (node instanceof ManualTask) {
+		} else if (node instanceof TestTask) {
+			analysis.addTask(task, "test");
+		}
+		else if (node instanceof ManualTask) {
 			analysis.addTask(task, "manual");
 		}
 		return task;
